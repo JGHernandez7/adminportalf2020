@@ -9,7 +9,9 @@ class Links extends CI_Controller
 	}
 
 	function index()
-	{
-		
-	}
+    {
+    	$this->load->model('Link');
+    	$data['links'] = $this->Link->getAll();
+    	$this->load->view('admin/links', $data);
+    }
 }
