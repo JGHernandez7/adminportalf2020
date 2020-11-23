@@ -6,6 +6,7 @@ class Login extends CI_Controller
 		parent::__construct();
 		if($this->session->userdata('admin'))
 			redirect('admin/dashboard');
+		$this->load->model('admin');
 	}
 
 	function index()
@@ -16,7 +17,6 @@ class Login extends CI_Controller
 	function verify()
 	{
 		//username: support password: support
-		$this->load->model('admin');
 		$check = $this->admin->validate();
 		if($check)
 		{
