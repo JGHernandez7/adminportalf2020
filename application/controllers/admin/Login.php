@@ -20,7 +20,14 @@ class Login extends CI_Controller
 		$check = $this->admin->validate();
 		if($check)
 		{
-			$this->session->set_userdata('admin', '1');
+			$userData = json_decode(json_encode($check), true);
+			$session_data = array(
+				'admin' => '1',
+				'name' => $userData["name"],
+				'username' => $userData['username'],
+				'role' => $userData['role']
+			);
+			$this->session->set_userdata($session_data);
 			redirect('admin/dashboard');
 		}
 		else
