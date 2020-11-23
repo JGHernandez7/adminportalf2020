@@ -1,11 +1,15 @@
 <?php
-$this->load->view('admin/header');
+$data['links'] = $links;
+$data['role'] = $role;
+$this->load->view('admin/header', $data);
 ?>
 
-<h1>Dashboard</h1>
+<?php
+echo "<h1>".ucfirst($role)." Dashboard</h1>
 <p>
-	Welcome admin.
-</p>
+	Welcome, ".ucfirst($name)."
+</p>"
+?>
 
 <?php
 $this->load->view('admin/footer');

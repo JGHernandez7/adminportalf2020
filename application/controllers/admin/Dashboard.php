@@ -10,7 +10,15 @@ class Dashboard extends CI_Controller
 
 	function index()
 	{
-		$this->load->view('admin/dashboard');
+		if($this->session->userdata('username') != ''){
+			$this->load->model("linksrepo");
+			$data["links"] = $this->linksrepo->getdatabyrole($this->session->userdata('role'));
+			$data["role"] = $this->session->userdata('role');
+			$data["name"] = $this->session->userdata('name');
+			$this->load->view('admin/dashboard', $data);
+		}else{
+		//	redirect(base_url() . 'admin/login');
+		}
 	}
 
 	function logout()

@@ -6,6 +6,7 @@ class Login extends CI_Controller
 		parent::__construct();
 		if($this->session->userdata('admin'))
 			redirect('admin/dashboard');
+		$this->load->model('admin');
 	}
 
 	function index()
@@ -16,11 +17,17 @@ class Login extends CI_Controller
 	function verify()
 	{
 		//username: support password: support
-		$this->load->model('admin');
 		$check = $this->admin->validate();
 		if($check)
 		{
-			$this->session->set_userdata('admin', '1');
+			$userData = json_decode(json_encode($check), true);
+			$session_data = array(
+				'admin' => '1',
+				'name' => $userData["name"],
+				'username' => $userData['username'],
+				'role' => $userData['role']
+			);
+			$this->session->set_userdata($session_data);
 			redirect('admin/dashboard');
 		}
 		else
