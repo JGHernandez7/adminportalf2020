@@ -7,6 +7,19 @@
 	<script type="text/javascript" src="<?php echo site_url('bootstrap/js/bootstrap.js')?>"></script>
 </head>
 
+<?php
+if($this->session->flashdata('error'))
+{
+	?>
+<div class="alert alert-warning" role="alert">
+	<?php
+		echo $this->session->flashdata('error');
+	?>
+</div>
+<?php
+}
+?>
+
 <body>
 <div class="login col-md-4 mx-auto text-center">
 	<h1> Admin Registration</h1>
@@ -63,9 +76,13 @@
 					<div class="clearfix"></div>
 				</div>
 			</div>
-			<input type="submit" name="submit" class="btn btn-info" value="save">
+			<input type="submit" name="submit" class="btn btn-primary" value="save">
 		</div>
 		<div class="clearfix"></div>
 	</form>
+	<br>
+	<div>
+		<a href="<?php echo base_url('admin') ?>" class="btn btn-info">Return</a>
+	</div>
 </body>
 </html>

@@ -30,8 +30,10 @@ class Login extends CI_Controller
 			$this->session->set_userdata($session_data);
 			redirect('admin/dashboard');
 		}
+		
 		else
 		{
+			$this->session->set_flashdata('unregistered', 'Your Username/Password is incorrect!');
 			redirect('admin');
 		}
 	}

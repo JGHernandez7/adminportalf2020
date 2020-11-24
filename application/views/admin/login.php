@@ -28,18 +28,18 @@ else if($this->session->flashdata('failure'))
 <?php
 }
 
-else if($this->session->flashdata('error'))
+else if($this->session->flashdata('unregistered'))
 {
 	?>
-<div class="alert alert-warning" role="alert">
+<div class="alert alert-danger" role="alert">
 	<?php
-		echo $this->session->flashdata('error');
+		echo $this->session->flashdata('unregistered');
 	?>
 </div>
 <?php
 }
-?>
- 
+?> 
+
 <body>
 	<div class="login col-md-4 mx-auto text-center">
 		<h1>Admin Login</h1>
