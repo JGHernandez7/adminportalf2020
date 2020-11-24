@@ -6,8 +6,12 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="<?php echo site_url('bootstrap/js/bootstrap.js')?>"></script>
 </head>
-<h1> Admin Registration</h1>
+
 <body>
+<div class="login col-md-4 mx-auto text-center">
+	<h1> Admin Registration</h1>
+<br>
+</div>
 	<form action="<?php echo site_url('admin/register/save'); ?>" method="post">
 		<div class="col-md-7">
 			<div class="form-group">

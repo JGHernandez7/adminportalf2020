@@ -16,7 +16,7 @@ class Register extends CI_Controller
 	{
 		$check = $this->Admin->check();
 
-		if($this->input->post('password') != $this->input->post('password_c'))
+		if($this->input->post('password') != $this->input->post('password_c') || $this->input->post('password') == $this->input->post('NULL'))
 		{
 			$this->session->set_flashdata('error', 'Password did not match!');
 			redirect('admin');

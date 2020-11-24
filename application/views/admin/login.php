@@ -39,10 +39,11 @@ else if($this->session->flashdata('error'))
 <?php
 }
 ?>
-
+ 
 <body>
 	<div class="login col-md-4 mx-auto text-center">
 		<h1>Admin Login</h1>
+		<br>
 		<form method="post" action="<?php echo site_url('admin/login/verify')?>">
 			<div class="form-group">
 				<input type="text" name="username" placeholder="Username" class="form-control">

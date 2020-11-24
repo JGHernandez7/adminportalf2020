@@ -18,10 +18,7 @@
       	  <li class="nav-item active">
       	  	<a class="nav-link" href="<?php echo site_url('admin/dashboard'); ?>">Dashboard <span class="sr-only">(current)</span></a>
       	  </li>
-<<<<<<< HEAD
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('admin/links'); ?>">Links</a>
-=======
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -32,14 +29,14 @@
 							}
 							?>
             </div>
->>>>>>> master
+
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Profile
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="<?php echo site_url('admin/dashboard/info') ?>">Settings</a>
               <a class="dropdown-item" href="<?php echo site_url('admin/dashboard/logout') ?>">Logout</a>
             </div>
           </li>
